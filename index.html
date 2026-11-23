@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weboide | Compliant Cloud Infrastructure</title>
+  <meta name="description" content="Weboide builds compliant, secure AWS infrastructure as code. Design EC2, VPC, S3 and IAM resources, check them against compliance rules, and ship Terraform with confidence." />
+  <link rel="icon" type="image/jpeg" href="weboidetech_logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo">
+        <img src="weboidetech_logo.jpg" alt="Weboide" class="logo__img" width="200" height="200" />
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle__label" aria-label="Open menu">
+        <span></span>
+      </label>
+
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <div class="nav__actions">
+          <a href="/signup" class="nav__link">New account</a>
+          <a href="/login" class="btn btn--small">Sign in</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <span class="tag">Infrastructure as Code, made compliant</span>
+        <h1 class="hero__title">
+          Build compliant cloud infrastructure with <span class="gradient-text">Weboide</span>
+        </h1>
+        <p class="hero__text">
+          Design AWS resources visually, generate production-ready Terraform, and check every
+          change against security and compliance rules before it reaches the cloud.
+        </p>
+        <div class="hero__cta">
+          <a href="/signup" class="btn">Get started free</a>
+          <a href="#how-it-works" class="btn btn--ghost">See how it works</a>
+        </div>
+
+        <!-- Mock terminal preview -->
+        <div class="preview">
+          <div class="preview__bar">
+            <span></span><span></span><span></span>
+            <p>main.tf</p>
+          </div>
+<pre class="preview__code"><code><span class="c-key">resource</span> <span class="c-str">"aws_s3_bucket"</span> <span class="c-str">"app_logs"</span> {
+  bucket = <span class="c-str">"weboide-app-logs"</span>
+}
+
+<span class="c-key">resource</span> <span class="c-str">"aws_s3_bucket_public_access_block"</span> <span class="c-str">"app_logs"</span> {
+  bucket                  = aws_s3_bucket.app_logs.id
+  block_public_acls       = <span class="c-bool">true</span>
+  restrict_public_buckets = <span class="c-bool">true</span>
+}</code></pre>
+          <div class="preview__status">
+            <span class="dot"></span>
+            Weboide check passed: 12 of 12 compliance rules met
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES STRIP ============ -->
+    <section class="strip">
+      <div class="container">
+        <p class="strip__label">Supported AWS services</p>
+        <ul class="strip__list">
+          <li>EC2</li>
+          <li>VPC</li>
+          <li>S3</li>
+          <li>IAM</li>
+          <li>Subnets</li>
+          <li>NAT Gateway</li>
+          <li>Security Groups</li>
+          <li>Route Tables</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head">
+          <span class="tag">Features</span>
+          <h2>Everything you need to ship secure infrastructure</h2>
+          <p>One workspace for designing, validating and deploying cloud resources.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__icon">01</div>
+            <h3>Compute with EC2</h3>
+            <p>Launch virtual machines with guided forms for instance details, storage, networking and advanced options.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">02</div>
+            <h3>Secure networking</h3>
+            <p>Build VPCs, subnets, route tables, NACLs, gateways and prefix lists in any AWS region.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">03</div>
+            <h3>Storage and identity</h3>
+            <p>Create S3 buckets and IAM users and roles with secure defaults already set.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">04</div>
+            <h3>Compliance rules</h3>
+            <p>Every resource is checked against your compliance rules, so problems show up before you deploy.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">05</div>
+            <h3>Audit-ready reports</h3>
+            <p>Generate compliance reports as PDF in one click, ready to share with your auditors and stakeholders.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">06</div>
+            <h3>Team projects</h3>
+            <p>Group resources into projects, invite teammates by email and manage roles together.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section section--alt" id="how-it-works">
+      <div class="container">
+        <div class="section__head">
+          <span class="tag">How it works</span>
+          <h2>From idea to compliant cloud in three steps</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">1</span>
+            <h3>Create a project</h3>
+            <p>Start a project, pick your region and invite your team.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">2</span>
+            <h3>Design your resources</h3>
+            <p>Configure EC2, VPC, S3 and IAM using simple forms instead of raw code.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">3</span>
+            <h3>Validate and deploy</h3>
+            <p>Weboide checks compliance, generates Terraform and provisions the resources.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section__head">
+          <span class="tag">Pricing</span>
+          <h2>Simple plans for every team</h2>
+          <p>Start free and upgrade when your infrastructure grows.</p>
+        </div>
+
+        <div class="grid grid--3 pricing">
+          <article class="plan">
+            <h3 class="plan__name plan__name--1">Basic</h3>
+            <p class="plan__desc">For individuals exploring compliant IaC.</p>
+            <p class="plan__price">$0</p>
+            <a href="/signup" class="btn btn--ghost btn--block">Get started</a>
+            <ul class="plan__list">
+              <li>1 project</li>
+              <li>1 team member</li>
+              <li>Up to 10 resources</li>
+              <li>EC2, VPC, S3 and IAM builders</li>
+              <li>Core compliance rules</li>
+            </ul>
+          </article>
+
+          <article class="plan plan--featured">
+            <span class="plan__badge">Most popular</span>
+            <h3 class="plan__name plan__name--2">Premium</h3>
+            <p class="plan__desc">For growing teams shipping to production.</p>
+            <p class="plan__price">$9.99<span>/month</span></p>
+            <a href="/signup" class="btn btn--block">Get started</a>
+            <ul class="plan__list">
+              <li>10 projects</li>
+              <li>Up to 5 team members</li>
+              <li>Up to 100 resources</li>
+              <li>PDF compliance reports</li>
+              <li>Priority support</li>
+            </ul>
+          </article>
+
+          <article class="plan">
+            <h3 class="plan__name plan__name--3">Enterprise</h3>
+            <p class="plan__desc">For organisations with custom requirements.</p>
+            <p class="plan__price">Custom</p>
+            <a href="mailto:support@weboide.com" class="btn btn--ghost btn--block">Contact us</a>
+            <ul class="plan__list">
+              <li>50 projects</li>
+              <li>Up to 25 team members</li>
+              <li>Up to 1,000 resources</li>
+              <li>Custom compliance rules</li>
+              <li>Admin dashboard and dedicated support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--alt" id="faq">
+      <div class="container container--narrow">
+        <div class="section__head">
+          <span class="tag">FAQ</span>
+          <h2>Common questions</h2>
+        </div>
+
+        <details class="faq">
+          <summary>Do I need to know Terraform?</summary>
+          <p>No. Weboide generates the Terraform for you from simple forms. You can still view and download the code at any time.</p>
+        </details>
+        <details class="faq">
+          <summary>Which cloud providers are supported?</summary>
+          <p>AWS is supported today, including EC2, VPC, S3, IAM and networking resources.</p>
+        </details>
+        <details class="faq">
+          <summary>Can I work with my team?</summary>
+          <p>Yes. Invite teammates to a project by email and collaborate on the same infrastructure.</p>
+        </details>
+        <details class="faq">
+          <summary>How are compliance checks done?</summary>
+          <p>Each resource is evaluated against a set of compliance rules. You can see its status and export a report.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <h2>Ready to secure your cloud?</h2>
+        <p>Create your free Weboide account and build your first compliant resource in minutes.</p>
+        <a href="/signup" class="btn">Create free account</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#hero" class="logo">
+        <img src="weboidetech_logo.jpg" alt="Weboide" class="logo__img" width="200" height="200" />
+      </a>
+      <nav class="footer__links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="/login">Sign in</a>
+      </nav>
+      <p class="footer__copy">&copy; 2026 Weboide. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
